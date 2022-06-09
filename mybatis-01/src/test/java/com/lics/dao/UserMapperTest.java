@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import java.util.List;
 
-public class UserDaoTest {
+public class UserMapperTest {
 
     @Test
     public void test01() {
@@ -15,7 +15,7 @@ public class UserDaoTest {
         SqlSession sqlSession = MybatisUtils.getSqlSession();
 
         // 执行SQL
-        UserDao mapper = sqlSession.getMapper(UserDao.class);
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
         List<User> userList = mapper.getUserList();
 
         System.out.println(userList);
@@ -23,4 +23,20 @@ public class UserDaoTest {
         sqlSession.close();
 
     }
+
+    @Test
+    public void test02() {
+        // 获取sqlSession对象
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+
+        // 执行SQL
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+        User user = mapper.getUserById(1);
+
+        System.out.println(user);
+
+        sqlSession.close();
+
+    }
+
 }
