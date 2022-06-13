@@ -9,7 +9,6 @@ import java.util.HashMap;
 import java.util.List;
 
 public class UserMapperTest {
-
     @Test
     public void test01() {
         // 获取sqlSession对象
@@ -45,7 +44,7 @@ public class UserMapperTest {
 
         // 执行SQL
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-        User user = new User(4, "ZhaoLiu", "zxczxc");
+        User user = new User(10, "ZhaoLiu", "zxczxc");
         int result = mapper.addUser(user);
 
         if (result > 0) {
@@ -91,7 +90,7 @@ public class UserMapperTest {
 
         // 执行SQL
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-        int result = mapper.deleteUser(1);
+        int result = mapper.deleteUser(2);
 
         if (result > 0) {
             System.out.println("删除成功");
@@ -104,25 +103,6 @@ public class UserMapperTest {
         System.out.println(userList);
 
         sqlSession.close();
-    }
-
-    @Test
-    public void test06() {
-        SqlSession sqlSession = MybatisUtils.getSqlSession();
-
-        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-
-
-        HashMap<String, Object> map = new HashMap<>();
-        map.put("uid", 7);
-        map.put("uname", "QinYi");
-        map.put("upwd", "asdqwer");
-
-        mapper.addUser2(map);
-
-        sqlSession.commit();
-        sqlSession.close();
-
     }
 
 }
