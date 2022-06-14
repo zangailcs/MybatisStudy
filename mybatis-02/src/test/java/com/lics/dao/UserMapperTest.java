@@ -44,7 +44,7 @@ public class UserMapperTest {
 
         // 执行SQL
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-        User user = new User(10, "ZhaoLiu", "zxczxc");
+        User user = new User(9, "ZhaoLiu", "zxczxc");
         int result = mapper.addUser(user);
 
         if (result > 0) {
