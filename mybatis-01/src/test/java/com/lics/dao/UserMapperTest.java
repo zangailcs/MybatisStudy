@@ -38,28 +38,28 @@ public class UserMapperTest {
     }
 
     // 增删改需要提交事务
-    @Test
-    public void test03() {
-        // 获取sqlSession对象
-        SqlSession sqlSession = MybatisUtils.getSqlSession();
-
-        // 执行SQL
-        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-        User user = new User(4, "ZhaoLiu", "zxczxc");
-        int result = mapper.addUser(user);
-
-        if (result > 0) {
-            System.out.println("插入成功");
-        }
-
-        // 提交事务
-        sqlSession.commit();
-
-        List<User> userList = mapper.getUserList();
-        System.out.println(userList);
-
-        sqlSession.close();
-    }
+//    @Test
+//    public void test03() {
+//        // 获取sqlSession对象
+//        SqlSession sqlSession = MybatisUtils.getSqlSession();
+//
+//        // 执行SQL
+//        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+//        User user = new User(4, "ZhaoLiu", "zxczxc");
+//        int result = mapper.addUser(user);
+//
+//        if (result > 0) {
+//            System.out.println("插入成功");
+//        }
+//
+//        // 提交事务
+//        sqlSession.commit();
+//
+//        List<User> userList = mapper.getUserList();
+//        System.out.println(userList);
+//
+//        sqlSession.close();
+//    }
 
     @Test
     public void test04() {
@@ -106,23 +106,23 @@ public class UserMapperTest {
         sqlSession.close();
     }
 
-    @Test
-    public void test06() {
-        SqlSession sqlSession = MybatisUtils.getSqlSession();
-
-        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-
-
-        HashMap<String, Object> map = new HashMap<>();
-        map.put("uid", 7);
-        map.put("uname", "QinYi");
-        map.put("upwd", "asdqwer");
-
-        mapper.addUser2(map);
-
-        sqlSession.commit();
-        sqlSession.close();
-
-    }
+//    @Test
+//    public void test06() {
+//        SqlSession sqlSession = MybatisUtils.getSqlSession();
+//
+//        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+//
+//
+//        HashMap<String, Object> map = new HashMap<>();
+//        map.put("uid", 7);
+//        map.put("uname", "QinYi");
+//        map.put("upwd", "asdqwer");
+//
+//        mapper.addUser2(map);
+//
+//        sqlSession.commit();
+//        sqlSession.close();
+//
+//    }
 
 }

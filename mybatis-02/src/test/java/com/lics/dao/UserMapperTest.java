@@ -37,28 +37,28 @@ public class UserMapperTest {
     }
 
     // 增删改需要提交事务
-    @Test
-    public void test03() {
-        // 获取sqlSession对象
-        SqlSession sqlSession = MybatisUtils.getSqlSession();
-
-        // 执行SQL
-        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-        User user = new User(9, "ZhaoLiu", "zxczxc");
-        int result = mapper.addUser(user);
-
-        if (result > 0) {
-            System.out.println("插入成功");
-        }
-
-        // 提交事务
-        sqlSession.commit();
-
-        List<User> userList = mapper.getUserList();
-        System.out.println(userList);
-
-        sqlSession.close();
-    }
+//    @Test
+//    public void test03() {
+//        // 获取sqlSession对象
+//        SqlSession sqlSession = MybatisUtils.getSqlSession();
+//
+//        // 执行SQL
+//        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+//        User user = new User(9, "ZhaoLiu", "zxczxc");
+//        int result = mapper.addUser(user);
+//
+//        if (result > 0) {
+//            System.out.println("插入成功");
+//        }
+//
+//        // 提交事务
+//        sqlSession.commit();
+//
+//        List<User> userList = mapper.getUserList();
+//        System.out.println(userList);
+//
+//        sqlSession.close();
+//    }
 
     @Test
     public void test04() {
