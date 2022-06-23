@@ -2,17 +2,18 @@
 <!DOCTYPE configuration
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
-<!--configuration 核心配置文件-->
 <configuration>
 
-    <!-- 引入外部配置文件-->
     <properties resource="db.properties">
         <property name="username" value="root"/>
         <property name="password" value="111"/>
     </properties>
 
+    <settings>
+        <setting name="logImpl" value="LOG4J"/>
+    </settings>
+    
     <typeAliases>
-<!--        <typeAlias type="com.lics.pojo.User" alias="User"/>-->
         <package name="com.lics.pojo"/>
     </typeAliases>
 
@@ -28,7 +29,6 @@
         </environment>
     </environments>
 
-    <!--  每一个Mapper.XMl都需要在此核心文件中注册！  -->
     <mappers>
         <!--        <mapper resource="com/lics/dao/UserMapper.xml" />-->
 <!--        <mapper class="com.lics.dao.UserMapper" />-->
