@@ -62,7 +62,7 @@ public class UserMapperTest {
         List<User> userListByAnnotations = mapper.getUserListByAnnotations();
         System.out.println(userListByAnnotations);
 
-        User user = new User(10, "1010", "1111111");
+        User user = new User(11, "1010", "1111111");
         mapper.addUserByAnnotations(user);
 
         mapper.updateUserByAnnotations(new User(3, "333update", "3333"));
